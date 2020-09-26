@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Project Newton</title>
+  <script src="https://unpkg.com/mathjs@6.2.2/dist/math.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-1.35.2.min.js"></script>
+
+  <style>
+    input[type=text] {
+      width: 300px;
+    }
+    input {
+      padding: 6px;
+    }
+    body, html, input {
+      font-family: comfortaa;
+      font-size: 11pt;
+      margin: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      font-size: 16px;
+      background-color: #3385ff;
+      align-items: center;
+    }
+    
+    .formBody {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      position: relative;
+      top: 70px;
+      z-index: 3;
+    }
+
+    .plotHeader {
+      position: relative;
+      top: 115px;
+      z-index: 2;
+      margin-left: 55px;
+    }
+
+    .derivativeHeader {
+      margin-left: 55px;
+    }
+
+    .integralHeader {
+      margin-left: 55px;
+    }
+
+    #derivative {
+      text-align: center;
+    }
+
+    #integral {
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+<div class="header">
+  <div style="font-weight: bold; display: block; font-size: 26px;">Project Newton</div>
+</div>
+<div class="body">
+    <form id="form">
+      <div class="formBody">
+        <div style="font-size: 20px">Enter An Equation:</div>
+        <div>
+          <input type="text" id="eq" value="4 * sin(x) + 5 * cos(x/2)" />
+          <input type="submit" value="Graph" />
+        </div>
+      </div>
+    </form>
+    <!--Graph-->
+    <h2 class="plotHeader">Graph: </h2>
+    <div id="plot"></div>
+    <!--Derivative-->
+    <h2 class="derivativeHeader">Derivative: </h2>
+    <div id="derivative"></div>
+    <div id="derivativePlot"></div>
+    <!--Integral-->
+    <h2 class="integralHeader">Integral: </h2>
+    <div id="integral"></div>
+    <div id="integralPlot"></div>
+</div>
+<script src="./bundle.js"></script>
+</body>
+</html>
+
